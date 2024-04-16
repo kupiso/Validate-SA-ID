@@ -66,17 +66,17 @@ class IDNum implements Functions{
             return "Valid SA ID Number";
         }
         else {
-           return "Invalid SA ID Number";
+            return "Invalid SA ID Number";
         }
     }
     public String printDetails(String idNum) {
         return
                 birthDate(idNum) + " " +
-                birthMonth(idNum) + " " +
-                birthYear(idNum) + ", " +
-                genderID(idNum) + ", " +
-                citizenship(idNum) + ", " +
-                idValidation(idNum);
+                        birthMonth(idNum) + " " +
+                        birthYear(idNum) + ", " +
+                        genderID(idNum) + ", " +
+                        citizenship(idNum) + ", " +
+                        idValidation(idNum);
     }
 }
 class Main{
@@ -85,21 +85,21 @@ class Main{
         IDNum identityNum = new IDNum();
         boolean isValidInput = false;
         while (!isValidInput){
-            System.out.print("Enter Your ID Number: ");
-                try {
-                    String idNum = scan.next();
-                    if (idNum.length() == 13){
-                        System.out.println(identityNum.printDetails(idNum));
-                        isValidInput = true;
-                    }
-                    else{
-                        System.out.println("Invalid ID Number, Please enter a 13 digit ID");
-                    }
+            System.out.print("Enter Your SA ID Number: ");
+            try {
+                String idNum = scan.next();
+                if (idNum.length() == 13){
+                    System.out.println(identityNum.printDetails(idNum));
+                    isValidInput = true;
                 }
-                catch (Exception e){
-                    System.out.println("Invalid Input");
-                    scan.nextLine();
+                else{
+                    System.out.println("Invalid ID Number, Please enter a 13 digit ID");
                 }
+            }
+            catch (Exception e){
+                System.out.println("Invalid Input");
+                scan.nextLine();
+            }
         }
         scan.close();
     }
