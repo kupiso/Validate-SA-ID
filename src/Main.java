@@ -84,23 +84,23 @@ class Main{
         Scanner scan = new Scanner(System.in);
         IDNum identityNum = new IDNum();
         boolean isValidInput = false;
-        while (!isValidInput){
-            System.out.print("Enter Your SA ID Number: ");
-            try {
-                String idNum = scan.next();
-                if (idNum.length() == 13){
-                    System.out.println(identityNum.printDetails(idNum));
-                    isValidInput = true;
+            while (!isValidInput){
+                System.out.print("Enter Your SA ID Number: ");
+                try {
+                    String idNum = scan.next();
+                    if (idNum.length() == 13){
+                        System.out.println(identityNum.printDetails(idNum));
+                        isValidInput = !false;
+                    }
+                    else{
+                        System.out.println("Invalid ID Number, Please enter a 13 digit ID");
+                    }
                 }
-                else{
-                    System.out.println("Invalid ID Number, Please enter a 13 digit ID");
+                catch (Exception e){
+                    System.out.println("Invalid Input");
+                    scan.nextLine();
                 }
             }
-            catch (Exception e){
-                System.out.println("Invalid Input");
-                scan.nextLine();
-            }
-        }
         scan.close();
     }
 }
