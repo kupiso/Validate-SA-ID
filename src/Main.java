@@ -16,7 +16,7 @@ class IDNum implements Functions{
         if( checksum >= 2000 && checksum < 2025){
             return year + 2000;
         }
-        else if (year < 99 && year >= 0) {
+        else if (year <= 99 && year >= 0) {
             return year + 1900;
         }
         return 0;
@@ -62,7 +62,7 @@ class IDNum implements Functions{
     }
     public String idValidation(String idNum){
         int checksum = Integer.valueOf(idNum.substring(12, 13));
-        if(checksum >= 0 && checksum <= 2){
+        if(checksum >= 0 && checksum <= 9){
             return "Valid SA ID Number";
         }
         else {
