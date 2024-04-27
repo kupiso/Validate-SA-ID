@@ -80,14 +80,14 @@ class IDNum implements Functions{
     }
 }
 class Main{
-    public static void main(String[] args) {
+    public void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        IDNum identityNum = new IDNum();
+        IDNum identityNum = IDNum();
         boolean isValidInput = false;
             while (!isValidInput){
                 System.out.print("Enter Your SA ID Number: ");
                 try {
-                    String idNum = scan.next();
+                    int idNum = scan.nextLine();
                     if (idNum.length() == 13){
                         System.out.println(identityNum.printDetails(idNum));
                         isValidInput = !false;
