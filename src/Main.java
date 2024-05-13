@@ -71,7 +71,7 @@ class IDNum implements Functions{
     }
     public String printDetails(String idNum) {
         return
-                birthDate(idNum) + " " +
+                        birthDate(idNum) + " " +
                         birthMonth(idNum) + " " +
                         birthYear(idNum) + ", " +
                         genderID(idNum) + ", " +
@@ -80,14 +80,14 @@ class IDNum implements Functions{
     }
 }
 class Main{
-    public void main(String[] args) {
+    public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        IDNum identityNum = IDNum();
+        IDNum identityNum = new IDNum();
         boolean isValidInput = false;
             while (!isValidInput){
                 System.out.print("Enter Your SA ID Number: ");
                 try {
-                    int idNum = scan.nextLine();
+                    String idNum = scan.next();
                     if (idNum.length() == 13){
                         System.out.println(identityNum.printDetails(idNum));
                         isValidInput = !false;
