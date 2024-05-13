@@ -71,7 +71,7 @@ class IDNum implements Functions{
     }
     public String printDetails(String idNum) {
         return
-                birthDate(idNum) + " " +
+                        birthDate(idNum) + " " +
                         birthMonth(idNum) + " " +
                         birthYear(idNum) + ", " +
                         genderID(idNum) + ", " +
