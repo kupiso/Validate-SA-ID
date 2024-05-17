@@ -7,7 +7,7 @@ interface Functions{
     String genderID(String idNum);
     String citizenship(String idNum);
     String idValidation(String idNum);
-    String printDetails(String idNum);
+    String print(String idNum);
 }
 class IDNum implements Functions{
     public int birthYear(String idNum){
@@ -69,7 +69,7 @@ class IDNum implements Functions{
             return "Invalid SA ID Number";
         }
     }
-    public String printDetails(String idNum) {
+    public String print(String idNum) {
         return
                         birthDate(idNum) + " " +
                         birthMonth(idNum) + " " +
@@ -89,7 +89,7 @@ class Main{
                 try {
                     String idNum = scan.next();
                     if (idNum.length() == 13){
-                        System.out.println(identityNum.printDetails(idNum));
+                        System.out.println(identityNum.print(idNum));
                         isValidInput = !false;
                     }
                     else{
