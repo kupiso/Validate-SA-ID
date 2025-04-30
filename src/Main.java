@@ -9,6 +9,7 @@ interface Functions{
     String idValidation(String idNum);
     String print(String idNum);
 }
+
 class IDNum implements Functions{
     public int birthYear(String idNum){
         int year = Integer.valueOf(idNum.substring(0,2));
@@ -21,10 +22,16 @@ class IDNum implements Functions{
         }
         return 0;
     }
+
+//  '990147894257081'
+//    newDate = 47
+//
     public int birthDate(String idNum){
         int newDate = Integer.valueOf(idNum.substring(4, 6));
         return newDate;
     }
+
+//
     public String birthMonth(String idNum){
         String month = idNum.substring(2, 4);
         switch (month){
